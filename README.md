@@ -43,4 +43,5 @@ New price: $12.99  / Old price:  $12.99 No price change
 ````
 
 Python 2.7
-This script uses BeautifulSoup, Webpy and needs a folder to store previous product data.
+		
+		This script uses BeautifulSoup, Webpy and needs a folder to store previous product data.
