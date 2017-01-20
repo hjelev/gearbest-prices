@@ -1,4 +1,4 @@
-# gearbest-prices
+# gearbest.com product price and availability tracker
 Price and availability tracker for gearbest.com
 
 Run this script with a cron job and you'll get an email each time there are price or availability changes in the list of tracked urls.
