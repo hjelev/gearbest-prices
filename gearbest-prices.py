@@ -27,7 +27,6 @@ def send_message(message,product_name): #sends emails to email_list
 	for recipient in email_list:
 		web.sendmail(web.config.smtp_username, recipient,"Price or Availability Change " + product_name, message, headers={'Content-Type':'text/html;charset=utf-8'})
 
-	
 def get_old_price(dbdir,product_name,stock_lvl,price): # reads old data and updates it with current data
 	db_filename = dbdir + product_name.replace(" ", "") + ".txt"
 
