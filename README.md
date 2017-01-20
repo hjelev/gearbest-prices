@@ -17,7 +17,9 @@ email_list = []
 email_list.append("user@gmail.com")
 email_list.append("user1@gmail.com")
 ````
-and make sure you have these modules installed: BeautifulSoup and Webpy.
+and make sure you have these python modules installed: 
+- BeautifulSoup 
+- Webpy
 
 Run this script with a cron job and you'll get an email each time there are price or availability changes in the list of tracked urls.
 
