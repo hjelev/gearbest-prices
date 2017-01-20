@@ -5,4 +5,4 @@ Run this script with a cron job and you'll get an email each time there are pric
 
 Python 2.7
 
-This script uses BeautifulSoup and needs a folder to store previous product data.
+This script uses BeautifulSoup, Webpy and needs a folder to store previous product data.
