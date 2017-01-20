@@ -1,7 +1,6 @@
 #!/usr/bin/python
 import web, json, urllib, urllib2 ,os.path
 from bs4 import BeautifulSoup
-from termcolor import colored
 from random import randint
 from time import sleep
 
@@ -80,7 +79,7 @@ def price_check(check_url):	#compare prices and availability / emails if there i
 	price, stock_lvl, product_name, image = parse_url(check_url)
 	oldprice,stock_avail = get_old_price(dbdir,product_name,stock_lvl,price) # build the path and open the DB file where last product price is stored
 	
-	print colored(product_name, 'yellow')
+	print product_name
 	print "url:", check_url
 	print "New price:", price,
 	print " / Old price: ", oldprice.split(",")[0],
