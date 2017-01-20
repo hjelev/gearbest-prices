@@ -1,8 +1,6 @@
 #!/usr/bin/python
-import web, json, urllib, urllib2 ,os.path
+import web, urllib2, os.path
 from bs4 import BeautifulSoup
-from random import randint
-from time import sleep
 
 dbdir = "/path/to/gearbest/db-files/" #folder where the DB files will be saved
 
