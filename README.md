@@ -1,7 +1,9 @@
 # gearbest.com products tracker
 Price and availability tracker for gearbest.com
 
-Before running the script for a first time, configure it by updating  these lines:
+---
+
+##Before running the script for a first time, configure it by updating  these lines:
 ````
 dbdir = "/path/to/gearbest/db-files/" #folder where the DB files will be saved
 web.config.smtp_username = 'username@gmail.com'
@@ -19,13 +21,13 @@ and make sure you have these modules installed: BeautifulSoup and Webpy.
 
 Run this script with a cron job and you'll get an email each time there are price or availability changes in the list of tracked urls.
 
-Cronjob example:
+##Cronjob example:
 ````
 10 */1 * * * /usr/bin/python /home/user/gearbest/gearbetst-prices.py
 ````
 In this example the script will run once per hour and notify you if there is a change.
 
-Script output example:
+##Script output example:
 ````
 Availability changed to Out of stock !
 Original Xiaomi Portable USB LED Light ( Enhanced Edition )
