@@ -1,7 +1,7 @@
 # gearbest.com products tracker
 Price and availability tracker for gearbest.com
 
-Before running the script for a first time, configure it by updating  these lines
+Before running the script for a first time, configure it by updating  these lines:
 ````
 dbdir = "/path/to/gearbest/db-files/" #folder where the DB files will be saved
 web.config.smtp_username = 'username@gmail.com'
@@ -15,7 +15,7 @@ email_list = []
 email_list.append("user@gmail.com")
 email_list.append("user1@gmail.com")
 ````
-and make sure you have these modules installed BeautifulSoup, Webpy.
+and make sure you have these modules installed: BeautifulSoup and Webpy.
 
 Run this script with a cron job and you'll get an email each time there are price or availability changes in the list of tracked urls.
 
