@@ -15,8 +15,17 @@ email_list = []
 email_list.append("user@gmail.com")
 email_list.append("user1@gmail.com")
 ````
+and make sure you have these modules installed BeautifulSoup, Webpy.
 
 Run this script with a cron job and you'll get an email each time there are price or availability changes in the list of tracked urls.
+
+Cronjob example:
+````
+10 */1 * * * /usr/bin/python /home/user/gearbest/gearbetst-prices.py
+````
+In this example the script will run once per hour and notify you if there is a change.
+
+Script output example:
 ````
 Availability changed to Out of stock !
 Original Xiaomi Portable USB LED Light ( Enhanced Edition )
@@ -32,6 +41,6 @@ url: http://www.gearbest.com/smart-light-bulb/pp_278478.html?wid=21
 New price: $12.99  / Old price:  $12.99 No price change
 
 ````
-Python 2.7
 
+Python 2.7
 This script uses BeautifulSoup, Webpy and needs a folder to store previous product data.
