@@ -1,6 +1,13 @@
 #!/usr/bin/env python
+
 import web, urllib2, os.path
+
 from bs4 import BeautifulSoup
+
+import logging
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
+log = logging.getLogger(__name__)
 
 dbdir = "data/" #folder where the DB files will be saved
 
@@ -29,6 +36,7 @@ def get_old_price(dbdir,link,stock_lvl,price): # reads old data and updates it w
 	db_filename = dbdir + link + ".txt"
 
 	if os.path.isfile(db_filename):  # check if file exists
+		log.info('File exist, writing into %s' % db_filename)
 		fo = open(db_filename, "r+")
 		oldprice = fo.readline() # if there is a file read the previous value
 		stock_avail = oldprice.split(",")[1]
