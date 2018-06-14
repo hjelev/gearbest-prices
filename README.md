@@ -21,6 +21,13 @@ and make sure you have these python modules installed:
 - BeautifulSoup 
 - Webpy
 
+
+```
+virtualenv -p python2 .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
 Run this script with a cron job and you'll get an email each time there are price or availability changes in the list of tracked urls.
 
 ##Cronjob example:
