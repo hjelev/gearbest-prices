@@ -18,12 +18,13 @@ email_list.append("user@gmail.com")
 email_list.append("user1@gmail.com")
 ````
 and make sure you have these python modules installed: 
-- BeautifulSoup 
-- Webpy
-
+- beautifulsoup4
+- requests
+- configparser
+- logging
 
 ```
-virtualenv -p python2 .venv
+virtualenv -p python3 .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
