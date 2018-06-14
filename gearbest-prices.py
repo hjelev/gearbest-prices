@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 import web, urllib2, os.path
 from bs4 import BeautifulSoup
 
@@ -26,7 +26,7 @@ def send_message(message,product_name): #sends emails to email_list
 		web.sendmail(web.config.smtp_username, recipient,"Price or Availability Change " + product_name, message, headers={'Content-Type':'text/html;charset=utf-8'})
 
 def get_old_price(dbdir,link,stock_lvl,price): # reads old data and updates it with current data
-	db_filename = dbdir + link.replace(" ", "") + ".txt"
+	db_filename = dbdir + link + ".txt"
 
 	if os.path.isfile(db_filename):  # check if file exists
 		fo = open(db_filename, "r+")
