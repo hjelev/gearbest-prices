@@ -43,5 +43,5 @@ Availability: In stock
 
 Availability changed to In stock !
 ````
-Python 3		
+Python 3  		
 This script uses BeautifulSoup and needs a folder to store previous product data.
