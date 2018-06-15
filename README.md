@@ -5,10 +5,6 @@ Price and availability tracker for gearbest.com
 
 ## Before running the script for a first time, configure it by updating  these lines:
 ````
-dbdir = "/path/to/gearbest/db-files/" #folder where the DB files will be saved
-web.config.smtp_username = 'username@gmail.com'
-web.config.smtp_password = 'password'
-...
 url_list = []
 url_list.append("http://www.gearbest.com/batteries-chargers/pp_140785.html")  #usb led light
 url_list.append("http://www.gearbest.com/electronics-gadgets/pp_280338.html") # enhanced xiaomi led light
@@ -22,7 +18,6 @@ and make sure you have these python modules installed:
 - requests
 - configparser
 - logging
-
 ```
 virtualenv -p python3 .venv
 source .venv/bin/activate
