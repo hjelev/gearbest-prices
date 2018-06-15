@@ -6,8 +6,8 @@ Price and availability tracker for gearbest.com
 ## Before running the script for a first time, configure it by updating  these lines:
 ````
 url_list = []
-url_list.append("http://www.gearbest.com/batteries-chargers/pp_140785.html")  #usb led light
-url_list.append("http://www.gearbest.com/electronics-gadgets/pp_280338.html") # enhanced xiaomi led light
+url_list.append("http://www.gearbest.com/batteries-chargers/pp_140785.html")
+url_list.append("http://www.gearbest.com/electronics-gadgets/pp_280338.html")
 
 email_list = []
 email_list.append("user@gmail.com")
@@ -34,21 +34,14 @@ In this example the script will run once per hour and notify you if there is a c
 
 ## Script output example:
 ````
-Availability changed to Out of stock !
-Original Xiaomi Portable USB LED Light ( Enhanced Edition )
-url: http://www.gearbest.com/electronics-gadgets/pp_280338.html
-New price: $3.64  / Old price:  $3.64 No price change
+*************** [ITEM] **************
+Name: Original Xiaomi Utility LED Light Portable USB Lamp Mobile P~
+URL: http://www.gearbest.com/batteries-chargers/pp_140785.html
+New price: $3.27 / Old price: $0
+New price: $3.27 The price have raised with $3.27
+Availability: In stock
 
-5mm Square Magnetic Block - 216Pcs
-url: http://www.gearbest.com/other-classic-toys/pp_271768.html
-New price: $20.82  / Old price:  $20.82 No price change
-
-Original Xiaomi Yeelight E27 Smart LED Bulb
-url: http://www.gearbest.com/smart-light-bulb/pp_278478.html?wid=21
-New price: $12.99  / Old price:  $12.99 No price change
-
+Availability changed to In stock !
 ````
-
-Python 2.7
-		
-This script uses BeautifulSoup, Webpy and needs a folder to store previous product data.
+Python 3		
+This script uses BeautifulSoup and needs a folder to store previous product data.
