@@ -34,7 +34,6 @@ In this example the script will run once per hour and notify you if there is a c
 
 ## Script output example:
 ````
-*************** [ITEM] **************
 ************** [ITEM] **************
 Name: Xiaomi Redmi Note 5 4G Phablet Global Version - $229.99 Free~
 URL: https://www.gearbest.com/cell-phones/pp_1660531.html
