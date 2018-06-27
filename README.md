@@ -35,13 +35,11 @@ In this example the script will run once per hour and notify you if there is a c
 ## Script output example:
 ````
 *************** [ITEM] **************
-Name: Original Xiaomi Utility LED Light Portable USB Lamp Mobile P~
-URL: http://www.gearbest.com/batteries-chargers/pp_140785.html
-New price: $3.27 / Old price: $0
-New price: $3.27 The price have raised with $3.27
-Availability: In stock
-
-Availability changed to In stock !
+************** [ITEM] **************
+Name: Xiaomi Redmi Note 5 4G Phablet Global Version - $229.99 Free~
+URL: https://www.gearbest.com/cell-phones/pp_1660531.html
+New price: $335.79 / Old price: $0.0
+Stock: Availability changed to 'In stock'!
 ````
 Python 3  		
 This script uses BeautifulSoup and needs a folder to store previous product data.
