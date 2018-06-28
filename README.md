@@ -20,7 +20,7 @@ url_list.append("http://www.gearbest.com/electronics-gadgets/pp_280338.html")
 currency = NZD
 rate = 1.46
 ```
-You can also adjuct other setting to your needs.
+You can also adjuct other settings to your needs.
 
 ## Running in virtual environment
 
