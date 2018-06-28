@@ -9,13 +9,13 @@ Choose which one you'd prefer more and follow the instrtuctions below.
 
 No matter what you've choosen adjust those settings to suit your preferences:
 
-1. Update url_list in app.py:
+1. Update url_list in ./app.py:
 ```
 url_list = []
 url_list.append("http://www.gearbest.com/batteries-chargers/pp_140785.html")
 url_list.append("http://www.gearbest.com/electronics-gadgets/pp_280338.html")
 ```  
-2. Update app's settings in tracker.config.ini
+2. Update app's settings in ./tracker/config.ini
 ```
 currency = NZD
 rate = 1.46
