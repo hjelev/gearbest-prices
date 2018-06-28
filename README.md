@@ -3,7 +3,7 @@ Price and availability tracker for gearbest.com
 
 ---
 
-## Install
+## Set up
 There are two ways of using this script - running on your machine in virtual environment or in Docker container.
 Choose which one you'd prefer more and follow the instrtuctions below.
 
@@ -22,7 +22,7 @@ rate = 1.46
 ```
 You can also adjuct other setting to your needs.
 
-### Virtual environment
+## Running in virtual environment
 
 1. Make sure that you're using right version of python in your venv:
 ```
@@ -42,7 +42,7 @@ export SMTP_TO = <your_email_address>
 ./app.py
 ```
 
-### Docker container
+## Running in Docker
 
 1. Create .env file in app's main directory and populate it with those variables:
 ```
