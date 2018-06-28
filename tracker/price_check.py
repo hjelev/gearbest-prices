@@ -1,14 +1,14 @@
-import configparser
-
 from tracker.parse_url import parse_url
 from tracker.send_message import send_message
 from tracker.get_old_price import get_old_price
+from tracker.config import config
 
-config = configparser.ConfigParser()
-config.read('tracker/config.ini')
+import logging
+log = logging.getLogger(__name__)
 
 DB_DIR = config['DEFAULT']['db_dir']
-RATE = config['DEFAULT']['rate'] if config['DEFAULT']['currency'] != 'USD' else 1
+CURRENCY = config['DEFAULT']['currency']
+RATE = config['DEFAULT']['rate'] if CURRENCY != 'USD' else 1
 
 def price_check(check_url):
     '''
@@ -25,7 +25,7 @@ def price_check(check_url):
     print('************** [ITEM] **************')
     print("Name: %s~" % product_name[:60])
     print("URL: %s" % check_url)
-    print("New price: $%s / Old price: $%s" % (price, old_price))
+    print("New price: ${0}{2} / Old price: ${1}{2}".format(price, old_price, CURRENCY))
     
     change = False
     body = ''
@@ -47,7 +47,7 @@ def price_check(check_url):
 
     # sending a message
     if (change and old_price != 0):
-        print('***DEBUG. Message will be sent.***')      
+        log.debug('***DEBUG. Message will be sent.***')      
         header = "<h2>%s</h2>\n" % product_name
         footer = "<a href='%s'></a>" % check_url
         message = header + body + footer

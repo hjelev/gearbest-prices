@@ -1,8 +1,5 @@
 import os.path
-
 import logging
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
 log = logging.getLogger(__name__)
 
 def get_old_price(db_dir,link,stock_lvl,price): # reads old data and updates it with current data
