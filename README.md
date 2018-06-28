@@ -70,9 +70,12 @@ docker logs -f <name_for_docker>
 
 ## Script output example:
 ````
-************** [ITEM] **************
-Name: Xiaomi Redmi Note 5 4G Phablet Global Version - $229.99 Free~
-URL: https://www.gearbest.com/cell-phones/pp_1660531.html
-New price: $335.79 / Old price: $0.0
-Stock: Availability changed to 'In stock'!
+2018-06-29 09:50:25,816 - tracker.price_check - INFO - ************** [ITEM] **************
+2018-06-29 09:50:25,817 - tracker.price_check - INFO - Name: Xiaomi Redmi Note 5 4G Phablet Global Version - $229.99 Free~
+2018-06-29 09:50:25,817 - tracker.price_check - INFO - URL: https://www.gearbest.com/cell-phones/pp_1660531.html
+2018-06-29 09:50:25,817 - tracker.price_check - INFO - New price: $335.79NZD / Old price: $0.0NZD
+2018-06-29 09:50:25,817 - tracker.price_check - INFO - Stock: Availability changed to 'In stock'!
+2018-06-29 09:50:25,817 - tracker.price_check - INFO - Sending an email. Please wait a second...
+2018-06-29 09:50:30,451 - tracker.price_check - INFO - Email has been sent.
+2018-06-29 09:50:30,452 - __main__ - INFO - Sleep for 60 seconds...
 ````
