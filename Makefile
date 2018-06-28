@@ -6,12 +6,12 @@ build:
 local:
 	docker ps -aq -f'name=$(DOCKER_NAME)' | xargs --no-run-if-empty docker rm -f
 	docker run -d \
-		--name=gearbest-prices \
+		--name=$(DOCKER_NAME) \
 		-e SMTP_USER=$(SMTP_USER) \
 		-e SMTP_PASS=$(SMTP_PASS) \
 		-e SMTP_FROM=$(SMTP_FROM) \
 		-e SMTP_TO=$(SMTP_TO) \
-		dev/gearbest-prices
+		dev/$(DOCKER_NAME)
 
 ########## CLEANING ##########
 prune:
