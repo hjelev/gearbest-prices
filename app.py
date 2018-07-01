@@ -20,17 +20,18 @@ url_list = [
 ]
 
 def main():
-	periodicity = config['DEFAULT']['periodicity']
+	period = config['DEFAULT']['period']
 
-	log.info('DB_DIR    : %s' % config['DEFAULT']['db_dir'])
-	log.info('CURRENCY  : %s' % config['DEFAULT']['currency'])
-	log.info('RATE      : %s' % config['DEFAULT']['rate'])
+	log.info('DB_DIR   : %s' % config['DEFAULT']['db_dir'])
+	log.info('CURRENCY : %s' % config['DEFAULT']['currency'])
+	log.info('RATE     : %s' % config['DEFAULT']['rate'])
+	log.info('PERIOD   : %s seconds' % config['DEFAULT']['period'])
 
 	while True:
 		for url in url_list:
 			price_check(url)
-		log.info('Sleep for %s seconds...' % periodicity)
-		sleep(int(periodicity))
+		log.info('Sleep for %s seconds...' % period)
+		sleep(int(period))
 
 if __name__ == "__main__":	
 	try:

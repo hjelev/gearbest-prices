@@ -1,3 +1,3 @@
 import configparser
 config = configparser.ConfigParser()
-config.read('tracker/config.ini')
+config.read('config.ini')
