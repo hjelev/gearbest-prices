@@ -22,6 +22,8 @@ def price_check(check_url):
     # NEED TO FIX. UGLY AS HELL!
     price = round(float(price)*float(RATE),2)
     old_price = round(float(old_price.split(",")[0])*float(RATE),2)
+    diff = round(price - old_price, 2)
+
     product_name = product_name[:60]
 
     log.info('************** [ITEM] **************')
@@ -45,12 +47,11 @@ def price_check(check_url):
     else:
         trend = 'raised' if price > old_price else 'dropped'
         change = True
-        diff = float(price) - float(old_price)
         body += "Price: New price - $%s. The price has %s to $%s\nAvailability: %s\n" % (price, trend, diff, stock_lvl)
 
     # sending a message
-    # if (change and old_price != 0):
-    if (change):
+    if (change and old_price != 0):
+    # if (change):
 
         conf = config['SMTP']
         header = "Product: %s\n" % product_name
