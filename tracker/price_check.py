@@ -29,7 +29,7 @@ def price_check(check_url):
     log.info('************** [ITEM] **************')
     log.info("Name: %s~" % product_name)
     log.info("URL: %s" % check_url)
-    log.info("New price: ${0}{2} / Old price: ${1}{2}".format(price, old_price, CURRENCY))
+    log.info("New price: {0} {2} / Old price: {1} {2}".format(price, old_price, CURRENCY))
     
     change = False
     body = ''
@@ -47,12 +47,10 @@ def price_check(check_url):
     else:
         trend = 'raised' if price > old_price else 'dropped'
         change = True
-        body += "Price: New price - $%s. The price has %s to $%s\nAvailability: %s\n" % (price, trend, diff, stock_lvl)
+        body += "Price: New price - {0} {4}. The price has {1} to {2} {4}\nAvailability: {3}\n".format(price, trend, diff, stock_lvl, CURRENCY)
 
     # sending a message
     if (change and old_price != 0):
-    # if (change):
-
         conf = config['SMTP']
         header = "Product: %s\n" % product_name
         footer = "Link: %s" % check_url
