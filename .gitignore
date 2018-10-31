@@ -1,0 +1,7 @@
+__pycache__
+*.pyc
+*.txt
+.venv
+.env
+.vscode
+depricated

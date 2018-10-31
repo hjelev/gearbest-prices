@@ -3,49 +3,89 @@ Price and availability tracker for gearbest.com
 
 ---
 
-##Before running the script for a first time, configure it by updating  these lines:
-````
-dbdir = "/path/to/gearbest/db-files/" #folder where the DB files will be saved
-web.config.smtp_username = 'username@gmail.com'
-web.config.smtp_password = 'password'
-...
-url_list = []
-url_list.append("http://www.gearbest.com/batteries-chargers/pp_140785.html")  #usb led light
-url_list.append("http://www.gearbest.com/electronics-gadgets/pp_280338.html") # enhanced xiaomi led light
+## Set up
+There are two ways of using this script - running on your machine in virtual environment or in Docker container.
+Choose which one you'd prefer more and follow the instrtuctions below.
 
-email_list = []
-email_list.append("user@gmail.com")
-email_list.append("user1@gmail.com")
-````
-and make sure you have these python modules installed: 
-- BeautifulSoup 
-- Webpy
+No matter what you've choosen adjust those settings to suit your preferences:
 
-Run this script with a cron job and you'll get an email each time there are price or availability changes in the list of tracked urls.
+1. Update url_list in ./app.py:
+```
+url_list = [
+	# your items here
+]
+```  
+2. Update app's settings in ./config.ini
+```
+period = 360
+currency = NZD
+rate = 1.46
+```
+You can also adjuct other settings to your needs.
 
-##Cronjob example:
-````
-10 */1 * * * /usr/bin/python /home/user/gearbest/gearbetst-prices.py
-````
-In this example the script will run once per hour and notify you if there is a change.
+## Running in virtual environment
 
-##Script output example:
-````
-Availability changed to Out of stock !
-Original Xiaomi Portable USB LED Light ( Enhanced Edition )
-url: http://www.gearbest.com/electronics-gadgets/pp_280338.html
-New price: $3.64  / Old price:  $3.64 No price change
+1. Make sure that you're using right version of python in your venv:
+```
+virtualenv -p python3 .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+2. Set up ENVs:   
+```
+export SMTP_USER = <username@example.com>
+export SMTP_PASS = <password>
+export SMTP_FROM = <username@example.com>
+export SMTP_TO = <your_email_address>
+```
+3. Run the script:
+```
+./app.py
+```
 
-5mm Square Magnetic Block - 216Pcs
-url: http://www.gearbest.com/other-classic-toys/pp_271768.html
-New price: $20.82  / Old price:  $20.82 No price change
+## Running in Docker
 
-Original Xiaomi Yeelight E27 Smart LED Bulb
-url: http://www.gearbest.com/smart-light-bulb/pp_278478.html?wid=21
-New price: $12.99  / Old price:  $12.99 No price change
+1. Create .env file in app's main directory and populate it with those variables:
+```
+DOCKER_NAME=<name_for_docker>
 
-````
+SMTP_USER=<username@example.com>
+SMTP_PASS=<password>
+SMTP_FROM=<username@example.com>
+SMTP_TO=<your_email_address>
+```
+2. Build the image by running
+```
+make build
+```
 
-Python 2.7
-		
-This script uses BeautifulSoup, Webpy and needs a folder to store previous product data.
+3. Run the container
+```
+make local
+```
+4. Check that everything is working
+```
+docker ps
+docker logs -f <name_for_docker>
+```
+
+## Script output example:
+```
+2018-06-29 09:50:25,816 - tracker.price_check - INFO - ************** [ITEM] **************
+2018-06-29 09:50:25,817 - tracker.price_check - INFO - Name: Xiaomi Redmi Note 5 4G Phablet Global Version - $229.99 Free~
+2018-06-29 09:50:25,817 - tracker.price_check - INFO - URL: https://www.gearbest.com/cell-phones/pp_1660531.html
+2018-06-29 09:50:25,817 - tracker.price_check - INFO - New price: $335.79NZD / Old price: $0.0NZD
+2018-06-29 09:50:25,817 - tracker.price_check - INFO - Stock: Availability changed to 'In stock'!
+2018-06-29 09:50:25,817 - tracker.price_check - INFO - Sending an email. Please wait a second...
+2018-06-29 09:50:30,451 - tracker.price_check - INFO - Email has been sent.
+2018-06-29 09:50:30,452 - __main__ - INFO - Sleep for 60 seconds...
+```
+## Email example:
+```
+from: ******@gmail.com
+to: ******@gmail.com 
+Product: Xiaomi Redmi Note 5 4G Phablet Global Version - $229.99 Free
+Price: New price - $335.79. The price has raised to $335.79
+Availability: In stock
+Link: https://www.gearbest.com/cell-phones/pp_1660531.html
+```
